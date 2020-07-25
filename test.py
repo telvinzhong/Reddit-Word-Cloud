@@ -11,11 +11,11 @@ from praw.models import MoreComments
 import matplotlib.pyplot as plt
 
 data = pd.read_csv(r"text.csv", encoding ="latin-1")
+comment_words = ""
 # Iterating through the .csv data file 
 for i in data: 
-    comment_words = ""
     i = str(i) 
-    separate = i.split()
+    separate = i.split(",")
     for j in range(len(separate)): 
         separate[j] = separate[j].lower() 
       
