@@ -34,3 +34,4 @@ plt.axis("off")
 plt.tight_layout(pad = 0) 
   
 plt.show()
+plt.savefig('foo.png', bbox_inches = 'tight')
