@@ -66,6 +66,7 @@ def main():
                     # stopwords = stop_words, 
                     min_font_size = 10).generate(comment_words)
     d = path.dirname(__file__)
+    # Save wordcloud to local file (Not sure how this will work online).
     final_wordcloud.to_file(path.join(d, "foo.png"))
 
     # Displaying the WordCloud.                        
@@ -75,8 +76,8 @@ def main():
     plt.tight_layout(pad = 0) 
     
     plt.show()
-    # plt.savefig('foo.png')
-    # , bbox_inches = 'tight'
+
+    # Testing imgur uploads
 
 
 main()
