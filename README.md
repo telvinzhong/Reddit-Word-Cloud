@@ -1,6 +1,5 @@
 # Reddit-Word-Cloud
 
-https://github.com/telvinzhong/Reddit-Word-Cloud/blob/master/Pics/img1.png
 
 <p align="center"><img src= "https://github.com/telvinzhong/Reddit-Word-Cloud/blob/master/Pics/img1.png"></p>
 
