@@ -42,11 +42,11 @@ word_count = 0
 
 reddit = praw.Reddit(client_id='qeEY-gzqmsBETQ', client_secret='5kzPlra-qhr2MRt5aYBKWHxRZFY', user_agent='Telvin Zhong')
  
-subreddit = reddit.subreddit("pythonforengineers")
+subreddit = reddit.subreddit("AskReddit")
 
 for comment in subreddit.stream.comments():
-    print(comment.body)
-    if re.search("Wordcloud me", comment.body, re.IGNORECASE):
+    # print(comment.body)
+    if re.search("!Wordcloud", comment.body, re.IGNORECASE):
         print("string found")
         submission = reddit.submission(url=str(comment.submission.url))
         submission.comments.replace_more(limit = 0)
@@ -70,14 +70,14 @@ def clean(word):
 
 # Assumes that the local foo.png has already been updated.
 def upload():
-    f = open("foo.png", "rb") # Open the image file as read only in binary mode.
-    image_data = f.read()     # Read in our image file.
+    f = open("foo.png", "rb") # open our image file as read only in binary mode
+    image_data = f.read()              # read in our image file
     b64_image = base64.standard_b64encode(image_data)
 
-    client_id = "5f4ec90a7daf0da"
+    client_id = "5f4ec90a7daf0da" # put your client ID here
     headers = {'Authorization': 'Client-ID ' + client_id}
 
-    data = {'image': b64_image, 'title': 'test'} # Create a dictionary.
+    data = {'image': b64_image, 'title': 'test'} # create a dictionary.
 
     request = urllib.request.Request(url="https://api.imgur.com/3/upload.json", data=urllib.parse.urlencode(data).encode('utf-8'),headers=headers)
     response = urllib.request.urlopen(request).read()
@@ -130,7 +130,7 @@ def main():
     plt.tight_layout(pad = 0) 
     
     plt.show()
-
+    
     upload()
 
 
